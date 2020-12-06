@@ -1,0 +1,14 @@
+<p>Вы живете в одном из этих городов?</p>
+<ul>
+  <li *ngFor="let item of towns">{{item}}</li>
+</ul>
+<button (click)="toggle()">Нет</button>
+<p *ngIf="condition">
+  Введите ваш город
+  <input placeholder="Ваш город">
+  <br><input type="button" value="Сохранить" (click)="showAlert()">
+</p>
+<p *ngIf="!condition">
+  Date: {{date}}
+  Time: {{time}}
+</p>

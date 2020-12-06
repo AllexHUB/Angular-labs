@@ -1,0 +1,8 @@
+<p><strong>Введите данные</strong></p>
+<p>Логин:
+    <input type="text" maxlength="25" [(ngModel)]="login"></p>
+  <p>Пароль:
+    <input type="password" maxlength="25" [(ngModel)]="password"></p>
+<app-greeting [userLogin]="login"></app-greeting>
+<app-template appBold></app-template>
+

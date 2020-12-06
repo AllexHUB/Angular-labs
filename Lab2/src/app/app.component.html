@@ -1,0 +1,38 @@
+<html>
+<body>
+  <app-homepage [title]="title" [footerTmpl]="footerTmpl">
+    <div class="header">
+      <a href="#default" class="logo">MyLogo</a>
+      <div class="header-right">
+        <a href="#home" class="active">Home</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </app-homepage>
+  <button (click)="login()">Log in</button>
+  <div *ngIf="isLoggedIn; else unauthorized">
+    <p>Hello, user</p>
+    <p>How are you?</p>
+    <p>{{title | uppercase}}</p>
+    <p>{{string | lowercase}}</p>
+    <p>{{string | slice:2:10}}</p>
+  </div>
+
+  <ng-template #unauthorized>
+  </ng-template>
+  <p>Сегодня {{currentDate | date: 'yyyy-MM-dd'}}</p>
+
+  <ng-template #footerTmpl>
+    <footer>
+      <p>The page owner: Alexey Grigorenko</p>
+      <p><a href="mailto:alexgrig12@google.com">alexgrig12@google.com</a></p>
+    </footer>
+  </ng-template>
+
+  <app-comp2 #counter></app-comp2>
+  <button (click)="increment()">+</button>
+  <button (click)="decrement()">-</button>
+
+</body>
+
+</html>
